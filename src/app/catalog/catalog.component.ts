@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CatalogService } from '../services/catalog/catalog.service';
+import { CartService } from '../services/cart/cart.service';
 import { CatalogItem } from '../models/CatalogItem';
-import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-catalog',
@@ -42,7 +42,8 @@ export class CatalogComponent implements OnInit {
   // dataSource: MatTableDataSource<CatalogItem>;
   // imageUrl = "https://firebasestorage.googleapis.com/v0/b/boardwalk-practicum.appspot.com/o/StarTech%20Power%20Cord.jpg?alt=media&token=4c320bf7-5970-41ee-9cd8-4b0f86af6f55"
 
-  constructor(private catalogService: CatalogService) { }
+  constructor(private catalogService: CatalogService,
+              private cartService: CartService) { }
 
   ngOnInit() {
     this.loadCatalog();
@@ -54,6 +55,16 @@ export class CatalogComponent implements OnInit {
       console.log(this.catalog); // TODO: remove
     } catch (err) {
       console.log(err);
+    }
+  }
+
+  addToCart($event: any): void {
+    const itemId = $event.target.value;
+    const catalogItem = this.catalog.find(item => item.id === itemId);
+    if (catalogItem) {
+      this.cartService.addItem(catalogItem);
+    } else {
+      console.log('Could not find catalog item ', itemId);
     }
   }
 }

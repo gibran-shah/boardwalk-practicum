@@ -17,6 +17,7 @@ export class CatalogService {
       // TODO: error handling for when data doesn't exist
       const data = doc.data();
       catalogData.push({
+        id: doc.id,
         name: data.name,
         description: data.description,
         imageUrl: data.imageUrl,

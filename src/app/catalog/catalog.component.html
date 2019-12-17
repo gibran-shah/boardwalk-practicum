@@ -22,7 +22,7 @@
             </ng-container>
             <ng-container matColumnDef="add to cart">
                 <th mat-header-cell *matHeaderCellDef></th>
-                <td mat-cell *matCellDef="let item"><button>Add to Cart</button></td>
+                <td mat-cell *matCellDef="let item"><button value="{{ item.id }}" (click)="addToCart($event)">Add to Cart</button></td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let item; columns: displayedColumns;"></tr>
