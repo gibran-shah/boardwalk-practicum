@@ -1,8 +1,7 @@
 @import '../../../styles.scss';
 
 .cart-container {
-    margin: 0 10px;
-    height: 90%;
+    height: 100%;
     color: $textColor;
 
     display: flex;
@@ -29,6 +28,7 @@
 
 .cart-info-container {
     margin-left: 5px;
+    width: 200px;
 
     display: flex;
     flex-direction: column;
@@ -38,4 +38,10 @@
 .cart-icon {
     font-size: 48pt;
     color: $primaryColor;
+}
+
+.cart-info-line-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
