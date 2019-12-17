@@ -7,12 +7,27 @@ import { CatalogItem, CartItem } from '../../models/CatalogItem';
 export class CartService {
 
   items: CartItem[] = [];
+  public totalQuantity = 0;
+  public subtotal = 0.0;
+  public total = 0.0;
+  public GST = 0.05;
 
   constructor() {
     const storedItems = sessionStorage.getItem('cart');
     if (storedItems && storedItems.length) {
       this.items = JSON.parse(storedItems);
+      this.calculateTotalQuantity();
+      this.calculateTotals();
     }
+  }
+
+  calculateTotalQuantity(): void {
+    this.totalQuantity = this.items.reduce((sum, item) => sum + item.quantity, 0);
+  }
+
+  calculateTotals(): void {
+    this.subtotal = this.items.reduceRight((sum, item) => sum + (parseFloat(item.price) * item.quantity), 0);
+    this.total = parseFloat((this.subtotal * (1.0 + this.GST)).toFixed(2));
   }
 
   addItem(catalogItem: CatalogItem): void {
@@ -27,6 +42,9 @@ export class CartService {
     }
 
     this.storeItemsInSession();
+
+    this.totalQuantity++;
+    this.calculateTotals();
   }
 
   private storeItemsInSession(): void {
