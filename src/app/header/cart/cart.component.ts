@@ -16,4 +16,11 @@ export class CartComponent implements OnInit {
   ngOnInit() {
   }
 
+  viewItems(): void {
+    console.log('view items');
+  }
+
+  checkout(): void {
+    console.log('checkout');
+  }
 }
