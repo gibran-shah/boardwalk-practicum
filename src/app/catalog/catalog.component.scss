@@ -1,0 +1,44 @@
+.main-container {
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.header {
+    width: 100%;
+    padding: 5px;
+}
+
+.table-container {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-row {
+    height: 65px;
+}
+
+.mat-cell {
+    padding: 5px;
+}
+
+.thumb {
+    width: 50px;
+}
+
+img {
+    transition: width 0;
+
+    &:hover {
+        position: absolute;
+        z-index: 100;
+        width: 300px;
+        border: 1px solid black;
+        box-shadow: 5px 5px 10px grey;
+
+        transition: width .2s linear;
+    }
+}
