@@ -59,5 +59,18 @@ $lighterGrey: #333;
             transition: width .2s linear;
         }
     }
+
+    button {
+        background-color: $primaryColor;
+        border-radius: 10px;
+        border: 0;
+        cursor: pointer;
+
+        transition: transform .2s linear;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
 }
 

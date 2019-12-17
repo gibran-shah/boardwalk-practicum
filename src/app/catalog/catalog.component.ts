@@ -10,7 +10,7 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class CatalogComponent implements OnInit {
 
-  displayedColumns = ['name', 'image', 'description', 'price'];
+  displayedColumns = ['name', 'image', 'description', 'price', 'add to cart'];
 
   catalog: CatalogItem[] = [];
   //   {
@@ -45,7 +45,6 @@ export class CatalogComponent implements OnInit {
   constructor(private catalogService: CatalogService) { }
 
   ngOnInit() {
-    // this.dataSource = new MatTableDataSource(this.catalog);
     this.loadCatalog();
   }
 
