@@ -1,0 +1,41 @@
+@import '../../../styles.scss';
+
+.cart-container {
+    margin: 0 10px;
+    height: 90%;
+    color: $textColor;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-border {
+    border: 1px solid $primaryColor;
+    border-radius: 5px;
+}
+
+.cart-contents {
+    margin: auto;
+    font-size: 10pt;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.cart-icon-container {
+    margin-right: 5px;
+}
+
+.cart-info-container {
+    margin-left: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cart-icon {
+    font-size: 48pt;
+    color: $primaryColor;
+}

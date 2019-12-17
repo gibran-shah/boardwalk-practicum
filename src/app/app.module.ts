@@ -10,11 +10,15 @@ import { environment } from '../environments/environment';
 import { CatalogComponent } from './catalog/catalog.component';
 
 import { MatTableModule } from '@angular/material';
+import { BannerComponent } from './header/banner/banner.component';
+import { CartComponent } from './header/cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CatalogComponent
+    CatalogComponent,
+    BannerComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

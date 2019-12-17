@@ -1,12 +1,21 @@
-.main-container {
-    margin: auto;
-    border: 1px solid black;
+@import '../../styles.scss';
+
+$lighterGrey: #333;
+
+.catalog-container {
+    margin: 20px 50px;
+    border: 1px solid $primaryColor;
     border-radius: 5px;
+    color: $textColor;
 }
 
 .header {
-    width: 100%;
+    width: 99%;
     padding: 5px;
+    border-radius: 5px;
+    background-color: $lighterGrey;
+    margin: auto;
+    font-size: 18pt;
 }
 
 .table-container {
@@ -19,6 +28,10 @@ table {
 
 .mat-row {
     height: 65px;
+}
+
+.mat-row:nth-child(odd) {
+    background-color: $lighterGrey;
 }
 
 .mat-cell {
