@@ -21,6 +21,8 @@ export class CartService {
     }
   }
 
+  //#region calculations
+
   calculateTotalQuantity(): void {
     this.totalQuantity = this.items.reduce((sum, item) => sum + item.quantity, 0);
   }
@@ -29,6 +31,10 @@ export class CartService {
     this.subtotal = this.items.reduceRight((sum, item) => sum + (parseFloat(item.price) * item.quantity), 0);
     this.total = parseFloat((this.subtotal * (1.0 + this.GST)).toFixed(2));
   }
+
+  //#endregion calculations
+
+  //#region CRUD operations (sort of)
 
   addItem(catalogItem: CatalogItem): void {
     const cartItem = this.items.find(item => item.id === catalogItem.id);
@@ -46,6 +52,17 @@ export class CartService {
     this.totalQuantity++;
     this.calculateTotals();
   }
+
+  emptyCart(): void {
+    this.items = [];
+    this.totalQuantity = 0;
+    this.subtotal = 0.0;
+    this.total = 0.0;
+
+    this.storeItemsInSession();
+  }
+
+  //#endregion CRUD operations (sort of)
 
   private storeItemsInSession(): void {
     sessionStorage.setItem('cart', JSON.stringify(this.items));

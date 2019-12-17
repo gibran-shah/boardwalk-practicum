@@ -13,6 +13,7 @@ import { MatTableModule } from '@angular/material';
 import { BannerComponent } from './header/banner/banner.component';
 import { CartComponent } from './header/cart/cart.component';
 import { LayoutComponent } from './layout/layout.component';
+import { CartDetailsComponent } from './cart-details/cart-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LayoutComponent } from './layout/layout.component';
     CatalogComponent,
     BannerComponent,
     CartComponent,
-    LayoutComponent
+    LayoutComponent,
+    CartDetailsComponent
   ],
   imports: [
     BrowserModule,

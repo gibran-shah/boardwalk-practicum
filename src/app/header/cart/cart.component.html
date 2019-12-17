@@ -6,7 +6,7 @@
         <div class="cart-info-container">
             <div class="cart-info-line-item">
                 <span>{{ cartService.totalQuantity }} item{{ cartService.totalQuantity === 1 ? '' : 's' }}</span>
-                <span>(empty)</span>
+                <span>(<a href="javascript:;" (click)="cartService.emptyCart()">empty</a>)</span>
             </div>
             <div class="cart-info-line-item">
                 <span>Total with GST:</span>
