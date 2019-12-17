@@ -12,13 +12,15 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { MatTableModule } from '@angular/material';
 import { BannerComponent } from './header/banner/banner.component';
 import { CartComponent } from './header/cart/cart.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CatalogComponent,
     BannerComponent,
-    CartComponent
+    CartComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
